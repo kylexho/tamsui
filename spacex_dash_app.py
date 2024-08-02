@@ -60,8 +60,7 @@ def get_pie_chart(entered_site):
     else:
         # cross check: CCAFS LC-40 26.9% good, 73.1% bad 
         site_success_df = spacex_df[spacex_df['Launch Site'] == entered_site]
-        site_success_df = site_success_df.groupby(['class','Launch Site'])['class'].count()
-        fig = px.pie(site_success_df, values='class', names='class',
+        fig = px.pie(site_success_df, names='class',
                 title='Total Success/ Failed Launch by sites : {}'.format(entered_site))
     return fig
 
